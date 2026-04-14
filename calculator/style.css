@@ -1,0 +1,411 @@
+/* =============================================================
+   style.css — TechCalc Modern Calculator Stylesheet
+   Author: TechCalc
+   Description: Dark-themed, glassmorphism calculator UI
+   ============================================================= */
+
+/* ========================
+   1. CSS CUSTOM PROPERTIES
+   ======================== */
+:root {
+  /* Colors */
+  --clr-bg-from:    #0d0d1a;
+  --clr-bg-to:      #0a0a2e;
+  --clr-glass:      rgba(255, 255, 255, 0.04);
+  --clr-glass-b:    rgba(255, 255, 255, 0.09);
+  --clr-border:     rgba(108, 99, 255, 0.2);
+  --clr-display:    rgba(0, 0, 0, 0.35);
+  --clr-white:      #ffffff;
+  --clr-text:       #e0e0ff;
+  --clr-muted:      rgba(200, 200, 255, 0.45);
+
+  /* Button colours */
+  --clr-btn-num:    rgba(255, 255, 255, 0.07);
+  --clr-btn-num-h:  rgba(255, 255, 255, 0.14);
+  --clr-btn-fn:     rgba(108, 99, 255, 0.18);
+  --clr-btn-fn-h:   rgba(108, 99, 255, 0.35);
+  --clr-btn-op:     rgba(0, 212, 255, 0.18);
+  --clr-btn-op-h:   rgba(0, 212, 255, 0.35);
+  --clr-btn-eq-from:#6c63ff;
+  --clr-btn-eq-to:  #00d4ff;
+
+  /* Accent gradient */
+  --grad-main: linear-gradient(135deg, #6c63ff 0%, #00d4ff 100%);
+
+  /* Typography */
+  --font: 'Poppins', sans-serif;
+
+  /* Misc */
+  --radius:    16px;
+  --radius-sm: 10px;
+  --shadow:    0 24px 64px rgba(0, 0, 0, 0.55);
+  --trans:     all 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ========================
+   2. RESET & BASE
+   ======================== */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  height: 100%;
+}
+
+body {
+  font-family: var(--font);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--clr-bg-from) 0%, var(--clr-bg-to) 100%);
+  overflow: hidden;
+  position: relative;
+}
+
+/* ========================
+   3. BACKGROUND GLOWS
+   ======================== */
+.bg-glow {
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(90px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.bg-glow-1 {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(108, 99, 255, 0.18) 0%, transparent 70%);
+  top: -120px;
+  right: -120px;
+}
+
+.bg-glow-2 {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(0, 212, 255, 0.12) 0%, transparent 70%);
+  bottom: -80px;
+  left: -80px;
+}
+
+/* ========================
+   4. WRAPPER / CENTERING
+   ======================== */
+.calc-wrapper {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* ========================
+   5. CALCULATOR CARD
+   ======================== */
+.calculator {
+  width: 100%;
+  max-width: 380px;
+  background: var(--clr-glass);
+  border: 1px solid var(--clr-border);
+  border-radius: 28px;
+  padding: 24px;
+  box-shadow: var(--shadow),
+              inset 0 1px 0 rgba(255,255,255,0.06);
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+
+  /* Subtle entrance animation */
+  animation: slideUp 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+/* ========================
+   6. DISPLAY
+   ======================== */
+.display {
+  background: var(--clr-display);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: var(--radius);
+  padding: 20px 22px 18px;
+  margin-bottom: 20px;
+  min-height: 110px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  gap: 6px;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Inner glow on display */
+.display::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(108,99,255,0.04) 0%, transparent 60%);
+  pointer-events: none;
+  border-radius: inherit;
+}
+
+/* Expression / history line */
+.display-expression {
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: var(--clr-muted);
+  word-break: break-all;
+  text-align: right;
+  min-height: 20px;
+  transition: var(--trans);
+}
+
+/* Main value */
+.display-current {
+  font-size: 2.6rem;
+  font-weight: 600;
+  color: var(--clr-white);
+  word-break: break-all;
+  text-align: right;
+  line-height: 1.1;
+  letter-spacing: -0.5px;
+  transition: var(--trans);
+}
+
+/* Shrink large numbers */
+.display-current.shrink    { font-size: 2rem; }
+.display-current.shrink-sm { font-size: 1.5rem; }
+.display-current.shrink-xs { font-size: 1.15rem; }
+
+/* Error state */
+.display-current.error {
+  color: #ff6b8a;
+  font-size: 1.4rem;
+}
+
+/* ========================
+   7. BUTTON GRID
+   ======================== */
+.btn-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+/* ========================
+   8. BASE BUTTON STYLE
+   ======================== */
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 70px;
+  border: none;
+  border-radius: var(--radius);
+  font-family: var(--font);
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: var(--clr-text);
+  cursor: pointer;
+  user-select: none;
+  transition: var(--trans);
+  outline: none;
+  position: relative;
+  overflow: hidden;
+
+  /* Border shimmer */
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* Ripple pseudo-element */
+.btn::after {
+  content: '';
+  position: absolute;
+  inset: 50% 50%;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  opacity: 0;
+  transition: inset 0.4s ease, opacity 0.4s ease;
+}
+
+.btn:active::after {
+  inset: -10% -10%;
+  opacity: 1;
+  transition: inset 0s, opacity 0s;
+}
+
+/* ──── Number Buttons ──── */
+.btn-num {
+  background: var(--clr-btn-num);
+}
+
+.btn-num:hover {
+  background: var(--clr-btn-num-h);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+.btn-num:active {
+  transform: scale(0.94) translateY(0);
+  box-shadow: none;
+}
+
+/* ──── Function Buttons (C, ⌫, %) ──── */
+.btn-fn {
+  background: var(--clr-btn-fn);
+  color: #a78bfa;
+  font-weight: 600;
+}
+
+.btn-fn:hover {
+  background: var(--clr-btn-fn-h);
+  color: #c4b5fd;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(108, 99, 255, 0.25);
+}
+
+.btn-fn:active {
+  transform: scale(0.94) translateY(0);
+  box-shadow: none;
+}
+
+/* ──── Operator Buttons ──── */
+.btn-op {
+  background: var(--clr-btn-op);
+  color: var(--clr-btn-eq-to);
+  font-weight: 600;
+  font-size: 1.3rem;
+}
+
+.btn-op:hover {
+  background: var(--clr-btn-op-h);
+  color: #40e0ff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 212, 255, 0.25);
+}
+
+.btn-op:active {
+  transform: scale(0.94) translateY(0);
+  box-shadow: none;
+}
+
+/* Highlight active operator */
+.btn-op.active {
+  background: rgba(0, 212, 255, 0.28);
+  border-color: rgba(0, 212, 255, 0.5);
+  box-shadow: 0 0 16px rgba(0, 212, 255, 0.25);
+  color: #40e0ff;
+}
+
+/* ──── Equals Button ──── */
+.btn-eq {
+  background: linear-gradient(135deg, var(--clr-btn-eq-from) 0%, var(--clr-btn-eq-to) 100%);
+  color: white;
+  font-weight: 700;
+  font-size: 1.4rem;
+  border: none;
+  box-shadow: 0 4px 20px rgba(108, 99, 255, 0.4);
+}
+
+.btn-eq:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 36px rgba(108, 99, 255, 0.6);
+  filter: brightness(1.1);
+}
+
+.btn-eq:active {
+  transform: scale(0.94) translateY(0);
+  box-shadow: 0 2px 8px rgba(108, 99, 255, 0.4);
+}
+
+/* ========================
+   9. KEYBOARD FOCUS STYLES
+   ======================== */
+.btn:focus-visible {
+  outline: 2px solid var(--clr-btn-eq-from);
+  outline-offset: 2px;
+}
+
+/* ========================
+   10. ANIMATIONS
+   ======================== */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes pop {
+  0%   { transform: scale(1); }
+  40%  { transform: scale(0.92); }
+  80%  { transform: scale(1.04); }
+  100% { transform: scale(1); }
+}
+
+/* Result pop animation (toggled via JS) */
+.display-current.result-pop {
+  animation: pop 0.3s ease both;
+}
+
+/* ========================
+   11. RESPONSIVE — TABLET & MOBILE
+   ======================== */
+@media (max-width: 480px) {
+  .calculator {
+    padding: 18px;
+    border-radius: 22px;
+    max-width: 340px;
+  }
+
+  .btn {
+    height: 60px;
+    font-size: 1rem;
+    border-radius: 12px;
+  }
+
+  .btn-op   { font-size: 1.15rem; }
+  .btn-eq   { font-size: 1.25rem; }
+
+  .display-current {
+    font-size: 2.2rem;
+  }
+
+  .btn-grid {
+    gap: 10px;
+  }
+}
+
+@media (max-width: 360px) {
+  .calculator  { padding: 14px; }
+  .btn         { height: 54px; font-size: 0.92rem; }
+  .display-current { font-size: 1.9rem; }
+  .btn-grid    { gap: 8px; }
+}
+
+/* Landscape phones */
+@media (max-height: 600px) and (orientation: landscape) {
+  .calc-wrapper {
+    align-items: flex-start;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    min-height: unset;
+  }
+
+  .btn   { height: 52px; }
+  .display { min-height: 80px; padding: 12px 18px; }
+  .display-current { font-size: 2rem; }
+  .btn-grid { gap: 8px; }
+}

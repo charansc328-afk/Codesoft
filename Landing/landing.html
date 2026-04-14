@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="TechNova - Innovate. Create. Elevate. A modern tech startup landing page." />
+  <title>TechNova | Next-Gen Technology Solutions</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Montserrat:wght@400;600;700;900&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="landing.css" />
+</head>
+<body>
+
+  <!-- ===========================
+       HEADER / NAVBAR
+  =========================== -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-container">
+      <!-- Brand Logo -->
+      <a href="#home" class="brand">
+        <span class="brand-icon"><i class="fa-solid fa-bolt"></i></span>
+        Tech<span class="brand-accent">Nova</span>
+      </a>
+
+      <!-- Navigation Links -->
+      <nav class="nav-links">
+        <a href="#home" class="nav-link active">Home</a>
+        <a href="#features" class="nav-link">Features</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+
+      <!-- CTA Button -->
+      <a href="#contact" class="btn btn-primary btn-nav">Get Started</a>
+
+      <!-- Hamburger (mobile) -->
+      <div class="hamburger" id="hamburger">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===========================
+       HERO SECTION
+  =========================== -->
+  <section class="hero" id="home">
+    <div class="container hero-container">
+      <!-- Left: Text Content -->
+      <div class="hero-text">
+        <span class="hero-badge">🚀 The Future is Now</span>
+        <h1 class="hero-title">
+          Innovate.<br />
+          Create.<br />
+          <span class="gradient-text">Elevate.</span>
+        </h1>
+        <p class="hero-desc">
+          TechNova empowers startups and enterprises with cutting-edge digital solutions — from AI-driven apps to sleek web experiences. Build smarter, move faster.
+        </p>
+        <div class="hero-buttons">
+          <a href="#features" class="btn btn-primary">Get Started <i class="fa-solid fa-arrow-right"></i></a>
+          <a href="#about" class="btn btn-outline">Learn More <i class="fa-solid fa-play"></i></a>
+        </div>
+        <!-- Stats Row -->
+        <div class="hero-stats">
+          <div class="stat">
+            <span class="stat-num">500+</span>
+            <span class="stat-label">Clients</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat">
+            <span class="stat-num">98%</span>
+            <span class="stat-label">Satisfaction</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat">
+            <span class="stat-num">10+</span>
+            <span class="stat-label">Awards</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Illustration -->
+      <div class="hero-image">
+        <div class="hero-img-wrapper">
+          <div class="floating-card card-1">
+            <i class="fa-solid fa-chart-line"></i>
+            <span>+120% Growth</span>
+          </div>
+          <div class="floating-card card-2">
+            <i class="fa-solid fa-shield-halved"></i>
+            <span>100% Secure</span>
+          </div>
+          <div class="hero-blob"></div>
+          <!-- SVG Illustration -->
+          <svg class="hero-svg" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <defs>
+              <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#6c63ff;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#00d4ff;stop-opacity:1" />
+              </linearGradient>
+            </defs>
+            <!-- Monitor -->
+            <rect x="80" y="100" width="340" height="220" rx="16" fill="url(#grad1)" opacity="0.15"/>
+            <rect x="95" y="115" width="310" height="190" rx="10" fill="#1a1a2e"/>
+            <rect x="110" y="130" width="280" height="160" rx="6" fill="#16213e"/>
+            <!-- Code lines -->
+            <rect x="125" y="150" width="140" height="8" rx="4" fill="#6c63ff" opacity="0.8"/>
+            <rect x="125" y="168" width="100" height="8" rx="4" fill="#00d4ff" opacity="0.6"/>
+            <rect x="125" y="186" width="160" height="8" rx="4" fill="#6c63ff" opacity="0.5"/>
+            <rect x="125" y="204" width="80" height="8" rx="4" fill="#a78bfa" opacity="0.7"/>
+            <rect x="125" y="222" width="120" height="8" rx="4" fill="#00d4ff" opacity="0.4"/>
+            <rect x="125" y="240" width="140" height="8" rx="4" fill="#6c63ff" opacity="0.6"/>
+            <rect x="125" y="258" width="90" height="8" rx="4" fill="#a78bfa" opacity="0.5"/>
+            <!-- Stand -->
+            <rect x="215" y="320" width="70" height="14" rx="4" fill="url(#grad1)" opacity="0.4"/>
+            <rect x="190" y="334" width="120" height="12" rx="6" fill="url(#grad1)" opacity="0.3"/>
+            <!-- Floating elements -->
+            <circle cx="380" cy="130" r="30" fill="#6c63ff" opacity="0.2"/>
+            <circle cx="380" cy="130" r="20" fill="#6c63ff" opacity="0.3"/>
+            <circle cx="380" cy="130" r="10" fill="#6c63ff" opacity="0.7"/>
+            <circle cx="100" cy="340" r="20" fill="#00d4ff" opacity="0.2"/>
+            <circle cx="100" cy="340" r="12" fill="#00d4ff" opacity="0.3"/>
+            <circle cx="100" cy="340" r="6" fill="#00d4ff" opacity="0.7"/>
+            <!-- Gear icon -->
+            <text x="330" y="290" font-size="36" fill="#a78bfa" opacity="0.5" font-family="Arial">⚙</text>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll Indicator -->
+    <div class="scroll-indicator">
+      <span></span>
+    </div>
+  </section>
+
+  <!-- ===========================
+       FEATURES SECTION
+  =========================== -->
+  <section class="features" id="features">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">What We Offer</span>
+        <h2 class="section-title">Powerful <span class="gradient-text">Features</span></h2>
+        <p class="section-desc">Everything you need to build, launch, and scale your digital product with confidence.</p>
+      </div>
+
+      <div class="features-grid">
+
+        <!-- Card 1 -->
+        <div class="feature-card">
+          <div class="feature-icon icon-purple">
+            <i class="fa-solid fa-rocket"></i>
+          </div>
+          <h3>Lightning Fast</h3>
+          <p>Blazing-fast performance with optimized architecture that keeps your users engaged and your metrics soaring.</p>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="feature-card">
+          <div class="feature-icon icon-blue">
+            <i class="fa-solid fa-shield-halved"></i>
+          </div>
+          <h3>Enterprise Security</h3>
+          <p>Bank-grade encryption and compliance-ready infrastructure to keep your data safe and your users' trust intact.</p>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="feature-card">
+          <div class="feature-icon icon-cyan">
+            <i class="fa-solid fa-chart-pie"></i>
+          </div>
+          <h3>Smart Analytics</h3>
+          <p>Real-time dashboards and AI-powered insights that transform raw data into actionable business intelligence.</p>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="feature-card">
+          <div class="feature-icon icon-pink">
+            <i class="fa-solid fa-plug-circle-bolt"></i>
+          </div>
+          <h3>Seamless Integrations</h3>
+          <p>Connect effortlessly with 200+ tools and platforms. From CRMs to payment gateways — everything just works.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===========================
+       ABOUT SECTION
+  =========================== -->
+  <section class="about" id="about">
+    <div class="container about-container">
+      <!-- Left: Image -->
+      <div class="about-image">
+        <div class="about-img-wrapper">
+          <div class="about-blob"></div>
+          <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" class="about-svg" aria-hidden="true">
+            <defs>
+              <linearGradient id="agrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#6c63ff"/>
+                <stop offset="100%" style="stop-color:#00d4ff"/>
+              </linearGradient>
+            </defs>
+            <circle cx="200" cy="200" r="160" fill="url(#agrad)" opacity="0.12"/>
+            <circle cx="200" cy="200" r="110" fill="url(#agrad)" opacity="0.15"/>
+            <!-- Team icons -->
+            <circle cx="200" cy="140" r="36" fill="#6c63ff" opacity="0.85"/>
+            <text x="188" y="148" font-size="22" fill="white">👤</text>
+            <circle cx="130" cy="240" r="28" fill="#00d4ff" opacity="0.85"/>
+            <text x="119" y="248" font-size="18" fill="white">👤</text>
+            <circle cx="270" cy="240" r="28" fill="#a78bfa" opacity="0.85"/>
+            <text x="259" y="248" font-size="18" fill="white">👤</text>
+            <!-- Connection lines -->
+            <line x1="200" y1="176" x2="150" y2="222" stroke="#6c63ff" stroke-width="2" opacity="0.4"/>
+            <line x1="200" y1="176" x2="258" y2="222" stroke="#6c63ff" stroke-width="2" opacity="0.4"/>
+            <!-- Badge -->
+            <rect x="142" y="310" width="116" height="36" rx="18" fill="url(#agrad)"/>
+            <text x="168" y="333" font-size="13" fill="white" font-family="Poppins, sans-serif" font-weight="600">Since 2018</text>
+          </svg>
+
+          <!-- Award badge -->
+          <div class="about-badge">
+            <i class="fa-solid fa-trophy"></i>
+            <div>
+              <span class="badge-num">10+</span>
+              <span class="badge-label">Awards Won</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Text -->
+      <div class="about-text">
+        <span class="section-badge">About TechNova</span>
+        <h2 class="section-title">Building the Future, <span class="gradient-text">One Pixel at a Time</span></h2>
+        <p>We are a team of passionate engineers, designers, and visionaries united by a single mission: to help businesses harness the power of technology to reach new heights.</p>
+        <p>Founded in 2018, TechNova has partnered with over 500 companies worldwide, delivering scalable, beautiful, and impactful digital solutions tailored to every unique challenge.</p>
+
+        <ul class="about-list">
+          <li><i class="fa-solid fa-circle-check"></i> Human-centered design philosophy</li>
+          <li><i class="fa-solid fa-circle-check"></i> Agile development & rapid iteration</li>
+          <li><i class="fa-solid fa-circle-check"></i> 24/7 dedicated support & maintenance</li>
+          <li><i class="fa-solid fa-circle-check"></i> Global team across 12 countries</li>
+        </ul>
+
+        <a href="#contact" class="btn btn-primary">Work With Us <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===========================
+       SERVICES / HIGHLIGHTS SECTION
+  =========================== -->
+  <section class="services" id="services">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">What We Build</span>
+        <h2 class="section-title">Our <span class="gradient-text">Services</span></h2>
+        <p class="section-desc">From strategy to launch — we cover the full digital lifecycle.</p>
+      </div>
+
+      <div class="services-grid">
+
+        <div class="service-card">
+          <div class="service-icon"><i class="fa-solid fa-laptop-code"></i></div>
+          <h4>Web Development</h4>
+          <p>Custom, high-performance websites and web applications built with modern technologies.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon"><i class="fa-solid fa-mobile-screen"></i></div>
+          <h4>Mobile Apps</h4>
+          <p>Native and cross-platform mobile apps that deliver seamless experiences on iOS and Android.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon"><i class="fa-solid fa-brain"></i></div>
+          <h4>AI Solutions</h4>
+          <p>Embed intelligence into your business with custom ML models, chatbots, and automation.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon"><i class="fa-solid fa-cloud"></i></div>
+          <h4>Cloud Infrastructure</h4>
+          <p>Scalable, reliable cloud architecture on AWS, GCP, or Azure. From setup to optimization.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon"><i class="fa-solid fa-palette"></i></div>
+          <h4>UI/UX Design</h4>
+          <p>Beautiful, user-tested interfaces that convert visitors into loyal customers.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon"><i class="fa-solid fa-chart-line"></i></div>
+          <h4>Growth & SEO</h4>
+          <p>Data-driven strategies to boost visibility, drive traffic, and scale your revenue.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===========================
+       CALL-TO-ACTION SECTION
+  =========================== -->
+  <section class="cta-section">
+    <div class="container cta-container">
+      <div class="cta-content">
+        <h2>Ready to Build Something <span class="cta-highlight">Extraordinary?</span></h2>
+        <p>Join 500+ innovators who trust TechNova to power their next big idea. Your journey starts today.</p>
+        <div class="cta-buttons">
+          <a href="#contact" class="btn btn-white">Start Today <i class="fa-solid fa-arrow-right"></i></a>
+          <a href="#features" class="btn btn-outline-white">Explore Features</a>
+        </div>
+      </div>
+      <!-- Decorative circles -->
+      <div class="cta-circle cta-circle-1"></div>
+      <div class="cta-circle cta-circle-2"></div>
+      <div class="cta-circle cta-circle-3"></div>
+    </div>
+  </section>
+
+  <!-- ===========================
+       CONTACT SECTION
+  =========================== -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Get In Touch</span>
+        <h2 class="section-title">Let's <span class="gradient-text">Connect</span></h2>
+        <p class="section-desc">Have a project in mind? We'd love to hear about it. Reach out and let's make it happen.</p>
+      </div>
+
+      <div class="contact-wrapper">
+        <!-- Contact Info -->
+        <div class="contact-info">
+          <h3>Contact Information</h3>
+          <p>Fill out the form or reach us directly through the channels below.</p>
+
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
+            <div>
+              <span class="ci-label">Email</span>
+              <span class="ci-value">hello@technova.io</span>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
+            <div>
+              <span class="ci-label">Phone</span>
+              <span class="ci-value">+1 (800) 123-4567</span>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fa-solid fa-location-dot"></i></div>
+            <div>
+              <span class="ci-label">Office</span>
+              <span class="ci-value">San Francisco, CA 94107</span>
+            </div>
+          </div>
+
+          <!-- Social Links -->
+          <div class="contact-socials">
+            <a href="#" class="social-btn" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#" class="social-btn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#" class="social-btn" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+            <a href="#" class="social-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <form class="contact-form" id="contactForm" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="firstName">First Name</label>
+              <input type="text" id="firstName" name="firstName" placeholder="John" required />
+            </div>
+            <div class="form-group">
+              <label for="lastName">Last Name</label>
+              <input type="text" id="lastName" name="lastName" placeholder="Doe" required />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="john@example.com" required />
+          </div>
+
+          <div class="form-group">
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" name="subject" placeholder="How can we help?" />
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Tell us about your project..." required></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-full">
+            Send Message <i class="fa-solid fa-paper-plane"></i>
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===========================
+       FOOTER
+  =========================== -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <!-- Brand -->
+      <div class="footer-brand">
+        <a href="#home" class="brand">
+          <span class="brand-icon"><i class="fa-solid fa-bolt"></i></span>
+          Tech<span class="brand-accent">Nova</span>
+        </a>
+        <p>Empowering businesses with next-generation technology solutions since 2018.</p>
+        <div class="footer-socials">
+          <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Services -->
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#">Web Development</a></li>
+          <li><a href="#">Mobile Apps</a></li>
+          <li><a href="#">AI Solutions</a></li>
+          <li><a href="#">Cloud & DevOps</a></li>
+        </ul>
+      </div>
+
+      <!-- Legal -->
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+          <li><a href="#">Cookie Policy</a></li>
+          <li><a href="#">Sitemap</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+      <div class="container">
+        <p>© 2026 MyBrand. All rights reserved. Crafted with <i class="fa-solid fa-heart" style="color:#f472b6;"></i> by TechNova.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
